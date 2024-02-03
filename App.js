@@ -82,21 +82,30 @@ const Header = () => {
 
 const RestCard = (props) => {
   const { resData } = props;
+  const {
+    cloudinaryImageId,
+    name,
+    cuisines,
+    avgRating,
+    costForTwo,
+    sla,
+  } = resData?.info;
+
   return (
     <div className="card">
       <img
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
+          cloudinaryImageId
         }
         alt="image"
         className="card-image"
       />
-      <h3>{resData.info.name}</h3>
-      <h5>{resData.info.cuisines.join(", ")}</h5>
-      <h5>{resData.info.avgRating}</h5>
-      <h5>{resData.info.costForTwo}</h5>
-      <h5>{resData.info.sla.slaString}</h5>
+      <h3>{name}</h3>
+      <h5>{cuisines.join(", ")}</h5>
+      <h5>{avgRating}</h5>
+      <h5>{costForTwo}</h5>
+      <h5>{sla.slaString}</h5>
     </div>
   );
 };
@@ -1429,7 +1438,9 @@ function Body() {
     <div>
       <h3>search</h3>
       <div className="body">
-        {CardData.map((restuarant) => <RestCard key={restuarant.info.id} resData = {restuarant} />)}
+        {CardData.map((restuarant) => (
+          <RestCard key={restuarant.info.id} resData={restuarant} />
+        ))}
       </div>
     </div>
   );
