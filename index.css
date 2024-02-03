@@ -1,3 +1,40 @@
-#heading{
-    color: blue;
+#heading {
+  color: blue;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px;
+}
+.nav-container:hover {
+  border: 1px solid red;
+}
+.logo {
+  width: 100px;
+}
+
+.nav-list > ul {
+  display: flex;
+}
+.nav-list > ul > li {
+  margin: 5px;
+  list-style-type: none;
+}
+.body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  margin: 5px;
+  background-color: lightcyan;
+  padding: 5px;
+  width: 200px;
+}
+.card:hover {
+  cursor: pointer;
+  border: 1px solid orange;
+}
+.card-image {
+  width: 100%;
 }
